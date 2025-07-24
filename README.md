@@ -4,7 +4,7 @@ This project is a submission for the Full-Stack Developer Internship technical a
 
 **Applicant's Job ID:** `FS8-969`
 
-**Live Demo URL:** [Your Live URL will go here after deployment on Vercel]
+**Live Demo URL:** [https://securesight-dashboard-assessment.vercel.app/](https://securesight-dashboard-assessment.vercel.app/)
 
 ---
 
@@ -85,3 +85,14 @@ To set up and run this project on your local machine, please follow these steps:
      This demonstrates a strong ability to debug and refactor complex build and configuration issues.
 
 - **Implemented Optimistic UI:** For the "Resolve" functionality, an optimistic UI approach was used. When the user clicks "Resolve", the item is immediately removed from the list for a fast, responsive user experience, while the API call happens in the background. This is a modern UX pattern that greatly enhances perceived performance.
+
+---
+
+## 🔮 If I Had More Time...
+
+Given more time, I would focus on these key improvements:
+
+- **Real-time Updates:** Implement WebSockets (using a library like `socket.io` or `pusher`) to push new incidents to the dashboard in real-time without needing a page refresh.
+- **Full User Authentication:** Add a complete login system (e.g., using NextAuth.js) to secure the dashboard and potentially assign incidents to specific operators.
+- **Comprehensive Testing:** Write unit tests for components (with Jest & React Testing Library) and integration tests for API routes to ensure the application is reliable and bug-free.
+- **Complete Optional 3D Deliverable:** Build out the optional 3D website using React Three Fibre (R3F) to showcase advanced frontend capabilities.
