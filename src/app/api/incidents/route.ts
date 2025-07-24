@@ -1,13 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     const resolved = searchParams.get('resolved')
     
     const incidents = await prisma.incident.findMany({
-      where: resolved !== null ? { resolved: resolved === 'true' } : undefined,
+      where: { 
+        // We only want incidents where resolved is false
+        resolved: false 
+      },
       include: {
         camera: true
       },
