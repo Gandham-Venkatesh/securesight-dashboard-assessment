@@ -2,12 +2,20 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
 // This is the function that handles PATCH requests to /api/incidents/[id]/resolve
+
+// Define a specific type for the context parameter
+type PatchContext = {
+  params: {
+    id: string;
+  };
+};
+
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } } // The type fix is here
+  context: PatchContext // Using the new, more specific type here
 ) {
   try {
-    const { id } = params
+    const { id } = context.params;
 
     // Find the incident by its ID and update the 'resolved' status to true
     const updatedIncident = await prisma.incident.update({
