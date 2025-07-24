@@ -1,12 +1,11 @@
-
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = ["native"]
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql" // This is the only change
+  url      = env("DATABASE_URL")
 }
 
 model Camera {
